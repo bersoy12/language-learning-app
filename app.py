@@ -9,16 +9,6 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    user_input = request.json.get("message")
-    response = openai.ChatCompletion.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": user_input}]
-    )
-    answer = response.choices[0].message["content"]
-    return jsonify({"answer": answer})
-
-@app.route("/")
-def home():
     return "flask heroku app"
 
 
