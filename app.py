@@ -19,5 +19,10 @@ def chat():
     answer = response.choices[0].message["content"]
     return jsonify({"answer": answer})
 
+@app.route("/")
+def home():
+    return "flask heroku app"
+
+
 if __name__ == "__main__":
     app.run()
